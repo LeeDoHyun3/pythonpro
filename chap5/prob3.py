@@ -6,34 +6,36 @@ print("Guess the Word!!!")
 print("In this game, the program selects a word at random, and the player's obejective is to guess the chosen word.\n")
 
 w = random.choice(words)
-i = len(w)
-print("Length of the selected word:" + str(i))
+lw = int(len(w))
+print("Length of the selected word:" + str(lw))
 
 gw = ""
-i = 0
 
-while(i < len(w)):
+i = 0
+while(lw > i):
     gw += "_"
     i += 1
 
-i = 6
-while(i > 0):
-    print("Remainig attempts: " + str(i))
+gw = list(gw)
+
+while(lw > 0):
+    print("Remainig attempts: " + str(lw))
     print("Current guessed word: " , end = "")
-    j = 0
-    while(j < len(gw)):
-        print(gw, end = " ")
-        j += 1
+    for k in gw:
+        print(k, end = " ")
+
     g = input("\nGuess a letter: ")
-    if g in w :
-        j = 0
-        while(j < len(w)):
-            if(w[j] == g):
-                gw[j] = w[j]
+    if g in w :    
+        i = 0
+        for k in w:
+            if g == k:
+                gw[i] = k
+            i += 1
     else:
         print("Incorrect guess.")
-        i -= 1
-    if gw == w:
+        lw -= 1
+    if gw == list(w):
         print("Congratulations! You guessed the word: " + w)
         break
-
+    elif lw == 0:
+        print("You've used up your attempts. The correct word was python.")
