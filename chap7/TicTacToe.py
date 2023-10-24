@@ -142,18 +142,8 @@ def computer_move_B(board, human, computer):
         return 1
 
 
-def computer_move_C(board, user, computer:
-    i = 0, j = 0
-    while i < 3:
-        while j < 3:
-            cnt = 0
-            if board[i][j] == user:
-                for 
+def computer_move_C (board, user, computer):
 
-            j += 1
-        i += 1
-                
-                
 
 
 
