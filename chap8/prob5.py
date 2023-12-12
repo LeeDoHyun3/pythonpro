@@ -6,29 +6,31 @@ except:
 try:
     num = float(input("\nEnter a number: "))
 except(ValueError):
-    print("That was not a number!")
+    print("That was not a number!\n")
 
 for value in (None, "Hi!"):
     try:
-        print("Attempting to convert", value, "->", end = "")
+        print("Attempting to convert", value, "-->", end = "")
         print(float(value))
     except(TypeError, ValueError):
         print("Someting went wrong!")
+
 print("\n")
 for value in (None, "Hi!"):
     try:
-        print("Attempting to convert", value, "->", end = "")
+        print("Attempting to convert", value, "-->", end = "")
         print(float(value))
     except(TypeError):
-        print("Can only convert string or number!")
+        print("I can only convert string or number!")
     except(ValueError):
-        print("Can only convert string of digit!")
+        print("I can only convert string of digit!")
 
 try:
     num = float(input("\nEnter a number: "))
 except(ValueError):
-    print("Not a number! Or as Python would say\n")
-    
+    print("Not a number! Or as Python would say:")
+    print("invalid literal for float<> : Hi!\n")
+
 try:
     num = float(input("\nEnter a number: "))
 except(ValueError):
